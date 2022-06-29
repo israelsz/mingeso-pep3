@@ -1,0 +1,42 @@
+
+-----------------------------------------------------------------
+Desafio Injection 2 estrellas "Login Admin"
+
+1) Al ingresar la cadena
+'OR true --    o 'OR 1=1 --
+en el campo de correo loggea a la cuenta de admin
+Esto permite loggearse a la primera cuenta de la base de datos
+que por coincidencia era la cuenta de admin, se bypassea la password.
+
+-----------------------------------------------------------------
+Desafio Injection 3 estrellas "Login Bender"
+- Conseguir su email en la parte de about us
+bender@juice-sh.op
+para entrar a su cuenta ingresar su mail, seguido de
+'-- 
+o sea
+bender@juice-sh.op'--
+Esto comentara la parte de la query que incluye la contraseña
+bypasseandola y permitiendo entrar a su cuenta.
+
+-----------------------------------------------------------------
+Desafio XSS 2 estrellas "Reflected XSS"
+En trackear un envío es posible observar que el id se refleja en la url y en el sitio web, lo que indica que es un potencial objetivo a un ataque de Cross Site Scripting, reemplazar el id por:
+
+<iframe src="javascript:alert(`xss`)">
+
+Claramente se puede enviar este link con algun javascript malicioso a algun tercero
+
+-----------------------------------------------------------------
+Desafio XSS 3 estrellas "Client-side XSS Protection"
+
+- Ir a registrar un nuevo usuario, es posible observar que el email tiene un sistema de protección, el cual es posible vulnerar para poder efectuar un ataque XSS.
+
+- Ingresar <iframe src="javascript:alert(`xss`)"> como email.
+- Usando el inspector html buscar el boton de register y eliminarle el parametro disabled = true, ahora es posible enviar la petición, esto debido a que la verificación de la cadena ingresada solo se hace en el front-end y no en el backend
+
+entrar a la cuenta de admin luego a la url /administration en la cual permite ver a todos los usuarios, es posible observar que apenas se visita la página, el codigo malicioso insertado se ejecuta para este caso el admin visitante
+
+
+
+Nota: la url de administration se encuentra buscando el path en el archivo main.js, al igual que /score-board

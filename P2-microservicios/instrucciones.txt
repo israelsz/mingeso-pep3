@@ -1,0 +1,6 @@
+Ejecutar el servicio de configuraciones
+Luego el servicio de eureka server
+Posterior se pueden levantar ambos servicios de productos
+Finalmente levantar el gateway para poder hacer peticiones HTTP
+
+Nota: Se necesita una db en mySql que contenga la tabla "producto"
