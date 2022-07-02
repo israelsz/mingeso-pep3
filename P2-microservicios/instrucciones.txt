@@ -4,3 +4,4 @@ Posterior se pueden levantar ambos servicios de productos
 Finalmente levantar el gateway para poder hacer peticiones HTTP
 
 Nota: Se necesita una db en mySql que contenga la tabla "producto"
+	No olvidar settear la password de la db en el proyecto de producto service
